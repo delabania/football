@@ -21,5 +21,8 @@ class Stats(models.Model):
     goals = models.IntegerField()
     assists = models.IntegerField()
 
+    class Meta:
+        unique_together = ["player", "game"]
+
     def __str__(self):
         return f"{self.game}: {self.player} -> ({self.goals}, {self.assists})"
