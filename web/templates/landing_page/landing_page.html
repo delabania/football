@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="pb-20 md:pb-0 overflow-hidden">
+    {% include "components/header.html" %}
+    {% include "landing_page/call_to_action.html" %}
+</section>
+<section class="bg-white 2xl:py-44 overflow-hidden">
+    {% include "landing_page/about_us.html" %}
+</section>
+<section class="bg-white 2xl:pt-44 2xl:pb-48 py-12">
+    {% include "landing_page/trophies.html" %}
+</section>
+<section class="2xl:py-44">
+    {% include "components/footer.html" %}
+</section>
+
+{% endblock %}
