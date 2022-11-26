@@ -1,0 +1,59 @@
+<!doctype html>
+{% load static i18n %}
+
+
+{% get_current_language as language_code}
+
+<head>
+    <title> {% spaceless %} {% block title %} Home {% endblock %} {% endspaceless %} </title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="$da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block site_meta %}{% endblock %}
+    {% block seo-meta %}
+    <meta name="robots" content="index, follow">
+    {% endblock %}
+
+    {% block extra_css %}{% endblock %}
+    {% block head_js %}{% endblock %}
+
+    <link href="{% static 'css/site.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+
+<body id="id-body" class="{{theme}}">
+<div>
+    <div class="flex h-screen antialiased overflow-x-hidden bg-base-200 text-base-content">
+        <div class="{% block page_wrapper_class %} h-full w-full overflow-hidden fixed {% endblock %}">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% block footer_js %}
+<script src="{% static 'js/cookie.js' %}"></script>
+<script src="https://unpkg.com/swagger-client"></script>
+<script>
+    const csfrtoken = getCookie('csrftoken');
+    const authHeaders = {'X-CSRFToken': csfrtoken};
+
+    const client = SwaggerClient('/api/openapi.json',{
+        requestInterceptor: (req) => {
+            req.headers['X-CSRFToken'] = csfrtoken;
+            req.headers['Content-Type'] = 'application/json';
+            return req;
+        }
+    });
+
+    client.then(client => console.log(client.apis));
+</script>
+
+
+{% endblock %}
+</body>
