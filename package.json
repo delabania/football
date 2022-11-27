@@ -1,0 +1,19 @@
+{
+  "name": "football",
+  "version": "1.0.0",
+  "description": "1. Build images - `docker-compose build` 2. Start services - `docker-compose up -d` 3. Create migrations - `docker-compose run web /usr/local/bin/python manage.py migrate`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-pbialon:delabania/football.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "daisyui": "^2.42.1"
+  }
+}

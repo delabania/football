@@ -1,40 +1,21 @@
 {% load static %}
 
-<div class="text-gray-50 font-heading font-medium relative bg-blueGray-100">
-    <nav class="flex justify-between px-6 lg:px-12 py-8 bg-white">
-        <div class="flex w-full items-center justify-between">
-            <a href="#">
-                <img class="h-12" src="{% static 'img/logo.jpeg' %}" alt=""></a>
-            <div class="text-black text-3xl p-2"> Gołkowskie Dziady</div>
-            <a class="inline-block uppercase text-black text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300" href="#">
-                Logowanie
-            </a>
-            <a class="inline-block uppercase text-white py-5 px-10 text-xl leading-6 text-white font-medium tracking-tighter font-heading bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-full" href="#">
-                Rejestracja
-            </a>
-
-
-            <button class="navbar-burger mx-auto px-4 hidden xl:block hover:text-blueGray-800 focus:outline-none">
-                <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="25" height="2" fill="currentColor"></rect>
-                    <rect y="14" width="25" height="2" fill="currentColor"></rect>
-                </svg>
-            </button>
-        </div>
-        <button class="navbar-burger self-center xl:hidden text-gray-400 hover:text-gray-500 focus:outline-none">
-            <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="25" height="2" fill="currentColor"></rect>
-                <rect y="14" width="25" height="2" fill="currentColor"></rect>
-            </svg>
-        </button>
-    </nav>
-    <div class="navbar-menu hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
-        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80"></div>
-        <button class="navbar-close absolute top-5 p-6 right-5">
-            <div class="absolute top-3">
-                <span class="absolute w-px h-6 bg-black transform -rotate-45"></span>
-                <span class="absolute w-px h-6 bg-black transform rotate-45"></span>
+<nav class="navbar bg-base-100 px-64 py-8">
+    <div class="navbar-start gap-4">
+        <div class="avatar">
+            <div class="h-12 rounded-xl">
+                <a href="#">
+                    <img src="{% static 'img/logo.jpeg' %}">
+                </a>
             </div>
-        </button>
+        </div>
+        <div class="text-2xl font-black"> Gołkowskie Dziady </div>
+        <div class="divider divider-horizontal"></div>
+        <button class="btn btn-ghost normal-case">Liczby</button>
+        <button class="btn btn-ghost normal-case">Mecze</button>
     </div>
-</div>
+    <div class="navbar-end gap-2">
+        <button class="btn bt-primary btn-ghost">Logowanie</button>
+        <button class="btn btn-primary">Rejestracja</button>
+    </div>
+</nav>
